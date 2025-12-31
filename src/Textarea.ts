@@ -1,7 +1,7 @@
-import { InputId } from "@/components/Input";
-import { html } from "@/modules/plugins/lang/html";
 import { MessageSourceType } from "silentium";
 import { Template } from "silentium-components";
+import { html } from "./html";
+import { InputId } from "./Input";
 
 /**
  * Textarea UI element

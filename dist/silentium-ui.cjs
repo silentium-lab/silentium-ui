@@ -5,10 +5,6 @@ var silentiumComponents = require('silentium-components');
 var uuid = require('uuid');
 var silentiumWebApi = require('silentium-web-api');
 var silentiumMorphdom = require('silentium-morphdom');
-var ClassName$1 = require('@/modules/ClassName');
-var Id$1 = require('@/modules/Id');
-var html$1 = require('@/modules/plugins/lang/html');
-var Input$1 = require('@/components/Input');
 
 function ClassName(s) {
   return silentium.Applied(s, (s2) => "." + s2);
@@ -208,7 +204,7 @@ function MountPoint($base) {
 
 function Select($value, $items) {
   return silentiumComponents.Template(
-    (t) => html$1.html`
+    (t) => html`
       <select
         class="${t.escaped(
       SelectId($value)
@@ -219,7 +215,7 @@ function Select($value, $items) {
       silentium.Applied(
         $items,
         (s) => s.map(
-          (i) => html$1.html`<option value="${i._id}">${i.title}</option>`
+          (i) => html`<option value="${i._id}">${i.title}</option>`
         ).join("")
       )
     )}
@@ -229,9 +225,9 @@ function Select($value, $items) {
 }
 function SelectId($value) {
   return silentium.Message((resolve, reject) => {
-    const $id = silentium.Shared(Id$1.Id());
+    const $id = silentium.Shared(Id());
     $id.then(resolve);
-    const $el = silentium.Shared(silentiumWebApi.Element(ClassName$1.ClassName($id)));
+    const $el = silentium.Shared(silentiumWebApi.Element(ClassName($id)));
     silentium.All($el, $value).then(([el, value]) => {
       if (el) {
         el.value = value;
@@ -253,11 +249,11 @@ function SelectId($value) {
 
 function Textarea($value) {
   return silentiumComponents.Template(
-    (t) => html$1.html`
+    (t) => html`
       <textarea
         rows="3"
         class="${t.escaped(
-      Input$1.InputId($value)
+      InputId($value)
     )} border-1 border-gray-300 bg-white p-2 rounded-sm w-full"
       ></textarea>
     `

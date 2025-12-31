@@ -1,6 +1,3 @@
-import { ClassName } from "@/modules/ClassName";
-import { Id } from "@/modules/Id";
-import { html } from "@/modules/plugins/lang/html";
 import {
   All,
   Applied,
@@ -12,6 +9,9 @@ import {
 } from "silentium";
 import { Template } from "silentium-components";
 import { Element } from "silentium-web-api";
+import { html } from "./html";
+import { Id } from "./Id";
+import { ClassName } from "./ClassName";
 
 export function Select(
   $value: MessageSourceType<string>,
