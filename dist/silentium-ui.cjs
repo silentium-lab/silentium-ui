@@ -4,6 +4,7 @@ var silentium = require('silentium');
 var silentiumComponents = require('silentium-components');
 var uuid = require('uuid');
 var silentiumWebApi = require('silentium-web-api');
+var silentiumMorphdom = require('silentium-morphdom');
 var ClassName$1 = require('@/modules/ClassName');
 var Id$1 = require('@/modules/Id');
 var html$1 = require('@/modules/plugins/lang/html');
@@ -181,6 +182,30 @@ function LinkExternal($url, $text, $class = silentium.Of("")) {
   );
 }
 
+function Mount($base, tag = "div") {
+  return silentium.Message((resolve, reject) => {
+    const dc = silentium.DestroyContainer();
+    const $id = silentium.Shared(Id(silentium.Of("mount-point")));
+    silentium.Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
+    const $el = silentiumWebApi.Element(ClassName($id)).catch(reject);
+    const $r = silentiumMorphdom.Render($el, $base).catch(reject).then(silentium.Void());
+    dc.add($el);
+    dc.add($r);
+    return () => {
+      dc.destroy();
+    };
+  });
+}
+
+function MountPoint($base) {
+  return silentium.Message((transport) => {
+    const $id = silentium.Shared(Id(silentium.Of("mount-point")));
+    $id.then(transport);
+    const $el = silentiumWebApi.Element(ClassName($id));
+    silentiumMorphdom.Render($el, $base).then(silentium.Void());
+  });
+}
+
 function Select($value, $items) {
   return silentiumComponents.Template(
     (t) => html$1.html`
@@ -250,6 +275,8 @@ exports.InputId = InputId;
 exports.KeyPressed = KeyPressed;
 exports.Link = Link;
 exports.LinkExternal = LinkExternal;
+exports.Mount = Mount;
+exports.MountPoint = MountPoint;
 exports.Select = Select;
 exports.SelectId = SelectId;
 exports.Textarea = Textarea;

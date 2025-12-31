@@ -57,6 +57,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "silentium": "^0.0.188",
     "silentium-components": "^0.0.100",
+    "silentium-morphdom": "^0.0.24",
     "silentium-web-api": "^0.0.35",
     "uuid": "^13.0.0"
   }

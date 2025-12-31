@@ -8,5 +8,7 @@ export * from "./Input";
 export * from "./KeyPressed";
 export * from "./Link";
 export * from "./LinkExternal";
+export * from "./Mount";
+export * from "./MountPoint";
 export * from "./Select";
 export * from "./Textarea";

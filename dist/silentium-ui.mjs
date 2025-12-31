@@ -1,7 +1,8 @@
-import { Applied, Message, Of, All, Shared, Connected, ActualMessage, FromEvent, Context, Primitive } from 'silentium';
+import { Applied, Message, Of, All, Shared, Connected, ActualMessage, FromEvent, Context, Primitive, DestroyContainer, Void } from 'silentium';
 import { Template, Task } from 'silentium-components';
 import { v4 } from 'uuid';
 import { Element } from 'silentium-web-api';
+import { Render } from 'silentium-morphdom';
 import { ClassName as ClassName$1 } from '@/modules/ClassName';
 import { Id as Id$1 } from '@/modules/Id';
 import { html as html$1 } from '@/modules/plugins/lang/html';
@@ -179,6 +180,30 @@ function LinkExternal($url, $text, $class = Of("")) {
   );
 }
 
+function Mount($base, tag = "div") {
+  return Message((resolve, reject) => {
+    const dc = DestroyContainer();
+    const $id = Shared(Id(Of("mount-point")));
+    Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
+    const $el = Element(ClassName($id)).catch(reject);
+    const $r = Render($el, $base).catch(reject).then(Void());
+    dc.add($el);
+    dc.add($r);
+    return () => {
+      dc.destroy();
+    };
+  });
+}
+
+function MountPoint($base) {
+  return Message((transport) => {
+    const $id = Shared(Id(Of("mount-point")));
+    $id.then(transport);
+    const $el = Element(ClassName($id));
+    Render($el, $base).then(Void());
+  });
+}
+
 function Select($value, $items) {
   return Template(
     (t) => html$1`
@@ -237,5 +262,5 @@ function Textarea($value) {
   );
 }
 
-export { Button, Checkbox, CheckedId, ClassName, Clicked, Id, Input, InputId, KeyPressed, Link, LinkExternal, Select, SelectId, Textarea, html };
+export { Button, Checkbox, CheckedId, ClassName, Clicked, Id, Input, InputId, KeyPressed, Link, LinkExternal, Mount, MountPoint, Select, SelectId, Textarea, html };
 //# sourceMappingURL=silentium-ui.mjs.map

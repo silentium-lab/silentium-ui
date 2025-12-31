@@ -43,6 +43,17 @@ declare function Link($linkUrl: MessageType<string>, $text: MessageType<string>,
 
 declare function LinkExternal($url: MessageType<string>, $text: MessageType<string>, $class?: MessageType<string>): silentium_components.TemplateImpl;
 
+declare function Mount($base: MessageType<string>, tag?: string): silentium.MessageImpl<string>;
+
+/**
+ * Returns a unique class id that needs to be used
+ * in the template for mounting $base.
+ * This technique allows decoupling
+ * the rendering of the main template from the rendering
+ * of some nested part.
+ */
+declare function MountPoint($base: MessageType<string>): silentium.MessageImpl<string>;
+
 declare function Select($value: MessageSourceType<string>, $items: MessageType<unknown[]>): silentium_components.TemplateImpl;
 declare function SelectId($value: MessageSourceType<string>): silentium.MessageImpl<string>;
 
@@ -51,4 +62,4 @@ declare function SelectId($value: MessageSourceType<string>): silentium.MessageI
  */
 declare function Textarea($value: MessageSourceType<string>): silentium_components.TemplateImpl;
 
-export { Button, Checkbox, CheckedId, ClassName, Clicked, Id, Input, InputId, KeyPressed, Link, LinkExternal, Select, SelectId, Textarea, html };
+export { Button, Checkbox, CheckedId, ClassName, Clicked, Id, Input, InputId, KeyPressed, Link, LinkExternal, Mount, MountPoint, Select, SelectId, Textarea, html };
