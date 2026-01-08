@@ -43,7 +43,7 @@ declare function Link($linkUrl: MessageType<string>, $text: MessageType<string>,
 
 declare function LinkExternal($url: MessageType<string>, $text: MessageType<string>, $class?: MessageType<string>): silentium_components.TemplateImpl;
 
-declare function Mount($base: MessageType<string>, tag?: string): silentium.MessageImpl<string>;
+declare function Mount($base: MessageType<string>, tag?: string, defaultValue?: string): silentium.MessageImpl<string>;
 
 /**
  * Returns a unique class id that needs to be used
