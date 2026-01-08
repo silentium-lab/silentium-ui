@@ -1,4 +1,4 @@
-import { Applied, Message, Of, All, Shared, Connected, ActualMessage, FromEvent, Context, Primitive, DestroyContainer, Void } from 'silentium';
+import { Applied, Message, Of, All, Shared, Connected, ActualMessage, FromEvent, Context, Primitive, DestroyContainer, Any, Void } from 'silentium';
 import { Template, Task } from 'silentium-components';
 import { v4 } from 'uuid';
 import { Element } from 'silentium-web-api';
@@ -180,11 +180,9 @@ function Mount($base, tag = "div", defaultValue = "") {
   return Message((resolve, reject) => {
     const dc = DestroyContainer();
     const $id = Shared(Id(Of("mount-point")));
-    Applied($id, (id) => `<${tag} class="${id}">${defaultValue}</${tag}>`).then(
-      resolve
-    );
+    Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
     const $el = Element(ClassName($id)).catch(reject);
-    const $r = Render($el, $base).catch(reject).then(Void());
+    const $r = Render($el, Any($base, defaultValue)).catch(reject).then(Void());
     dc.add($el);
     dc.add($r);
     return () => {
