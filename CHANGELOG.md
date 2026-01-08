@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/silentium-lab/silentium-ui/compare/v0.0.5...v0.0.6) (2026-01-08)
+
+
+### Bug Fixes
+
+* **main:** mount default value ([84769ab](https://github.com/silentium-lab/silentium-ui/commit/84769aba0dab465e4ba873b8a5e56f455f57b43f))
+
 ### [0.0.5](https://github.com/silentium-lab/silentium-ui/compare/v0.0.4...v0.0.5) (2026-01-08)
 
 
