@@ -24,7 +24,7 @@ import{Applied as e,Message as t,Of as n,All as r,Shared as o,Connected as c,Act
         class="${n.escaped(r)}"
       >
         ${n.escaped(t)}
-      </a>`)}function q(r,c="div",s=""){return t((t,u)=>{const a=d(),i=o(y(n("mount-point")));e(i,e=>`<${c} class="${e}"></${c}>`).then(t);const h=v(b(i)).catch(u),m=$(h,l(r,s)).catch(u).then(p());return a.add(h),a.add(m),()=>{a.destroy()}})}function z(e){return t(t=>{const r=o(y(n("mount-point")));r.then(t);const c=v(b(r));$(c,e).then(p())})}function A(t,n){return h(r=>w`
+      </a>`)}function q(r,c="div",s=""){return t((t,u)=>{const a=d(),i=o(y(n("mount-point")));e(i,e=>`<${c} class="${e}"></${c}>`).then(t);const h=v(b(i)).catch(u);s&&(r=l(r,s));const m=$(h,r).catch(u).then(p());return a.add(h),a.add(m),()=>{a.destroy()}})}function z(e){return t(t=>{const r=o(y(n("mount-point")));r.then(t);const c=v(b(r));$(c,e).then(p())})}function A(t,n){return h(r=>w`
       <select
         class="${r.escaped(B(t))} border-1 border-gray-300 bg-white p-2 rounded-sm w-full"
       >

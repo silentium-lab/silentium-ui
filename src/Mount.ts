@@ -23,7 +23,10 @@ export function Mount(
     const $id = Shared(Id(Of("mount-point")));
     Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
     const $el = Element(ClassName($id)).catch(reject);
-    const $r = Render($el, Any($base, defaultValue)).catch(reject).then(Void());
+    if (defaultValue) {
+      $base = Any($base, defaultValue);
+    }
+    const $r = Render($el, $base).catch(reject).then(Void());
     dc.add($el);
     dc.add($r);
 

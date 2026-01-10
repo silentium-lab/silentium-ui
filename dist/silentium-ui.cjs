@@ -184,7 +184,10 @@ function Mount($base, tag = "div", defaultValue = "") {
     const $id = silentium.Shared(Id(silentium.Of("mount-point")));
     silentium.Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
     const $el = silentiumWebApi.Element(ClassName($id)).catch(reject);
-    const $r = silentiumMorphdom.Render($el, silentium.Any($base, defaultValue)).catch(reject).then(silentium.Void());
+    if (defaultValue) {
+      $base = silentium.Any($base, defaultValue);
+    }
+    const $r = silentiumMorphdom.Render($el, $base).catch(reject).then(silentium.Void());
     dc.add($el);
     dc.add($r);
     return () => {
