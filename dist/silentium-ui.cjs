@@ -179,15 +179,19 @@ function LinkExternal($url, $text, $class = silentium.Of("")) {
 }
 
 function Mount($base, tag = "div", defaultValue = "") {
+  let $baseString = silentium.Applied(
+    $base,
+    (v) => typeof v === "string" ? v : String(v)
+  );
   return silentium.Message((resolve, reject) => {
     const dc = silentium.DestroyContainer();
     const $id = silentium.Shared(Id(silentium.Of("mount-point")));
     silentium.Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
     const $el = silentiumWebApi.Element(ClassName($id)).catch(reject);
     if (defaultValue) {
-      $base = silentium.Any($base, defaultValue);
+      $baseString = silentium.Any($baseString, defaultValue);
     }
-    const $r = silentiumMorphdom.Render($el, $base).catch(reject).then(silentium.Void());
+    const $r = silentiumMorphdom.Render($el, $baseString).catch(reject).then(silentium.Void());
     dc.add($el);
     dc.add($r);
     return () => {

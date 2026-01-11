@@ -177,15 +177,19 @@ function LinkExternal($url, $text, $class = Of("")) {
 }
 
 function Mount($base, tag = "div", defaultValue = "") {
+  let $baseString = Applied(
+    $base,
+    (v) => typeof v === "string" ? v : String(v)
+  );
   return Message((resolve, reject) => {
     const dc = DestroyContainer();
     const $id = Shared(Id(Of("mount-point")));
     Applied($id, (id) => `<${tag} class="${id}"></${tag}>`).then(resolve);
     const $el = Element(ClassName($id)).catch(reject);
     if (defaultValue) {
-      $base = Any($base, defaultValue);
+      $baseString = Any($baseString, defaultValue);
     }
-    const $r = Render($el, $base).catch(reject).then(Void());
+    const $r = Render($el, $baseString).catch(reject).then(Void());
     dc.add($el);
     dc.add($r);
     return () => {
