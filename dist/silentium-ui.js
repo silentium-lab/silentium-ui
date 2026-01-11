@@ -135,7 +135,7 @@ function InputId($value) {
     const $el = Shared(Element(ClassName($id)));
     All($el, $value).then(([el, value]) => {
       if (el) {
-        el.value = value;
+        el.value = typeof value === "string" ? value : String(value);
       }
     });
     const pressed = KeyPressed($el);
