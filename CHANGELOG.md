@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/silentium-lab/silentium-ui/compare/v0.0.7...v0.0.8) (2026-01-11)
+
+
+### Bug Fixes
+
+* **main:** input type check ([b840ddf](https://github.com/silentium-lab/silentium-ui/commit/b840ddfd0baf87474d9e326e2dc3a052ab94696a))
+
 ### [0.0.7](https://github.com/silentium-lab/silentium-ui/compare/v0.0.6...v0.0.7) (2026-01-10)
 
 
