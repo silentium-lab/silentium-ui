@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/silentium-lab/silentium-ui/compare/v0.0.9...v0.0.10) (2026-01-11)
+
+
+### Bug Fixes
+
+* **main:** mount can receive not only strings ([801d87a](https://github.com/silentium-lab/silentium-ui/commit/801d87a41167987d501b26c347affed9c23ca523))
+
 ### [0.0.9](https://github.com/silentium-lab/silentium-ui/compare/v0.0.8...v0.0.9) (2026-01-11)
 
 ### [0.0.8](https://github.com/silentium-lab/silentium-ui/compare/v0.0.7...v0.0.8) (2026-01-11)
