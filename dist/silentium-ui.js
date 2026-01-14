@@ -1,4 +1,4 @@
-import { Applied, Message, Of, All, Shared, Connected, ActualMessage, FromEvent, Context, Primitive, DestroyContainer, Any, Void } from 'silentium';
+import { Applied, Message, Of, All, Shared, Connected, Actual, FromEvent, Context, Primitive, DestroyContainer, Any, Void } from 'silentium';
 import { Template, Task } from 'silentium-components';
 import { v4 } from 'uuid';
 import { Element } from 'silentium-web-api';
@@ -60,12 +60,10 @@ function Button($label, $class, click, $attributes = Of(""), value) {
   return Connected(
     Template(
       (t) => html`<button
-          ${t.escaped(ActualMessage($attributes))}
-          class="${t.escaped($id)} ${t.escaped(
-        ActualMessage($class)
-      )} cursor-pointer"
+          ${t.escaped(Actual($attributes))}
+          class="${t.escaped($id)} ${t.escaped(Actual($class))} cursor-pointer"
         >
-          ${t.escaped(ActualMessage($label))}
+          ${t.escaped(Actual($label))}
         </button>`
     ),
     clicked
@@ -73,7 +71,7 @@ function Button($label, $class, click, $attributes = Of(""), value) {
 }
 
 function Checkbox(label, $value) {
-  const $label = ActualMessage(label);
+  const $label = Actual(label);
   return Template(
     (t) => html`
       <label>

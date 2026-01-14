@@ -62,12 +62,10 @@ function Button($label, $class, click, $attributes = silentium.Of(""), value) {
   return silentium.Connected(
     silentiumComponents.Template(
       (t) => html`<button
-          ${t.escaped(silentium.ActualMessage($attributes))}
-          class="${t.escaped($id)} ${t.escaped(
-        silentium.ActualMessage($class)
-      )} cursor-pointer"
+          ${t.escaped(silentium.Actual($attributes))}
+          class="${t.escaped($id)} ${t.escaped(silentium.Actual($class))} cursor-pointer"
         >
-          ${t.escaped(silentium.ActualMessage($label))}
+          ${t.escaped(silentium.Actual($label))}
         </button>`
     ),
     clicked
@@ -75,7 +73,7 @@ function Button($label, $class, click, $attributes = silentium.Of(""), value) {
 }
 
 function Checkbox(label, $value) {
-  const $label = silentium.ActualMessage(label);
+  const $label = silentium.Actual(label);
   return silentiumComponents.Template(
     (t) => html`
       <label>
