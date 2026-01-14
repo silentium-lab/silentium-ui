@@ -1,5 +1,5 @@
 import {
-  ActualMessage,
+  Actual,
   Connected,
   MaybeMessage,
   Of,
@@ -29,12 +29,10 @@ export function Button(
     Template(
       (t) =>
         html`<button
-          ${t.escaped(ActualMessage($attributes))}
-          class="${t.escaped($id)} ${t.escaped(
-            ActualMessage($class),
-          )} cursor-pointer"
+          ${t.escaped(Actual($attributes))}
+          class="${t.escaped($id)} ${t.escaped(Actual($class))} cursor-pointer"
         >
-          ${t.escaped(ActualMessage($label))}
+          ${t.escaped(Actual($label))}
         </button>`,
     ),
     clicked,

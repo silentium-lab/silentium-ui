@@ -1,5 +1,5 @@
 import {
-  ActualMessage,
+  Actual,
   All,
   FromEvent,
   MaybeMessage,
@@ -21,7 +21,7 @@ export function Checkbox(
   label: MaybeMessage<string>,
   $value: MessageSourceType<boolean>,
 ) {
-  const $label = ActualMessage(label);
+  const $label = Actual(label);
   return Template(
     (t) => html`
       <label>
