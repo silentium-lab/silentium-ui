@@ -60,6 +60,6 @@ declare function SelectId($value: MessageSourceType<string>): silentium.MessageI
 /**
  * Textarea UI element
  */
-declare function Textarea($value: MessageSourceType<string>): silentium_components.TemplateImpl;
+declare function Textarea($value: MessageSourceType<string>, _class?: MaybeMessage<string>): silentium_components.TemplateImpl;
 
 export { Button, Checkbox, CheckedId, ClassName, Clicked, Id, Input, InputId, KeyPressed, Link, LinkExternal, Mount, MountPoint, Select, SelectId, Textarea, html };

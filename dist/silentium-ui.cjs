@@ -252,14 +252,13 @@ function SelectId($value) {
   });
 }
 
-function Textarea($value) {
+function Textarea($value, _class = "") {
+  const class$ = silentium.Actual(_class);
   return silentiumComponents.Template(
     (t) => html`
       <textarea
         rows="3"
-        class="${t.escaped(
-      InputId($value)
-    )} border-1 border-gray-300 bg-white p-2 rounded-sm w-full"
+        class="${t.escaped(InputId($value))} ${t.escaped(class$)}"
       ></textarea>
     `
   );
