@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/silentium-lab/silentium-ui/compare/v0.0.12...v0.0.13) (2026-03-08)
+
+
+### Bug Fixes
+
+* **main:** button label as raw value ([01cae92](https://github.com/silentium-lab/silentium-ui/commit/01cae92e4849ba1e20e8a35888580c0254c868ff))
+
 ### [0.0.12](https://github.com/silentium-lab/silentium-ui/compare/v0.0.11...v0.0.12) (2026-02-02)
 
 
