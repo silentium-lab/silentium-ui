@@ -32,7 +32,7 @@ export function Button(
           ${t.escaped(Actual($attributes))}
           class="${t.escaped($id)} ${t.escaped(Actual($class))} cursor-pointer"
         >
-          ${t.escaped(Actual($label))}
+          ${t.raw(Actual($label))}
         </button>`,
     ),
     clicked,

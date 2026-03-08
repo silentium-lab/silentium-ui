@@ -65,7 +65,7 @@ function Button($label, $class, click, $attributes = silentium.Of(""), value) {
           ${t.escaped(silentium.Actual($attributes))}
           class="${t.escaped($id)} ${t.escaped(silentium.Actual($class))} cursor-pointer"
         >
-          ${t.escaped(silentium.Actual($label))}
+          ${t.raw(silentium.Actual($label))}
         </button>`
     ),
     clicked
