@@ -3,7 +3,7 @@ import { Message, MessageType } from "silentium";
 /**
  * DOM element click even
  */
-export function Clicked($class: MessageType<string>) {
+export function Clicked($class: MessageType<string>, options: any) {
   return Message<Event>((resolve) => {
     let className = ".no-class-of-such-name";
     const handler = (event: PointerEvent) => {
@@ -22,7 +22,7 @@ export function Clicked($class: MessageType<string>) {
     $class.then((newClassName) => {
       className = newClassName;
       (handler as any).className = newClassName;
-      document.body.addEventListener("click", handler);
+      document.body.addEventListener("click", handler, options);
     });
 
     return () => {

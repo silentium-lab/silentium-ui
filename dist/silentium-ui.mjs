@@ -8,7 +8,7 @@ function ClassName(s) {
   return Applied(s, (s2) => "." + s2);
 }
 
-function Clicked($class) {
+function Clicked($class, options) {
   return Message((resolve) => {
     let className = ".no-class-of-such-name";
     const handler = (event) => {
@@ -27,7 +27,7 @@ function Clicked($class) {
     $class.then((newClassName) => {
       className = newClassName;
       handler.className = newClassName;
-      document.body.addEventListener("click", handler);
+      document.body.addEventListener("click", handler, options);
     });
     return () => {
       document.body.removeEventListener("click", handler);
