@@ -19,7 +19,7 @@ declare function ClassName(s: MessageType<string>): silentium.MessageImpl<string
 /**
  * DOM element click even
  */
-declare function Clicked($class: MessageType<string>, options: any): silentium.MessageImpl<Event>;
+declare function Clicked($class: MessageType<string>, options?: any): silentium.MessageImpl<Event>;
 
 /**
  * Render html string

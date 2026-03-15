@@ -3,7 +3,7 @@ import { Message, MessageType } from "silentium";
 /**
  * DOM element click even
  */
-export function Clicked($class: MessageType<string>, options: any) {
+export function Clicked($class: MessageType<string>, options?: any) {
   return Message<Event>((resolve) => {
     let className = ".no-class-of-such-name";
     const handler = (event: PointerEvent) => {
