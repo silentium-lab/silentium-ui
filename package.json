@@ -60,10 +60,10 @@
   },
   "dependencies": {
     "cz-conventional-changelog": "^3.3.0",
-    "silentium": "^0.0.192",
-    "silentium-components": "^0.0.100",
-    "silentium-morphdom": "^0.0.24",
-    "silentium-web-api": "^0.0.35",
+    "silentium": "^0.0.218",
+    "silentium-components": "^0.0.119",
+    "silentium-morphdom": "^0.0.25",
+    "silentium-web-api": "^0.0.38",
     "uuid": "^13.0.0"
   }
 }
