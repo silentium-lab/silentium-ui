@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.19](https://github.com/silentium-lab/silentium-ui/compare/v0.0.18...v0.0.19) (2026-04-01)
+
+
+### Bug Fixes
+
+* silence ([d6a864e](https://github.com/silentium-lab/silentium-ui/commit/d6a864eef8554525acad3f7827c54c448e4f9b0c))
+
 ### [0.0.18](https://github.com/silentium-lab/silentium-ui/compare/v0.0.17...v0.0.18) (2026-04-01)
 
 ### [0.0.17](https://github.com/silentium-lab/silentium-ui/compare/v0.0.16...v0.0.17) (2026-04-01)
