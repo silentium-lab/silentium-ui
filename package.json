@@ -61,9 +61,9 @@
   "dependencies": {
     "cz-conventional-changelog": "^3.3.0",
     "silentium": "^0.0.222",
-    "silentium-components": "^0.0.120",
+    "silentium-components": "^0.0.121",
     "silentium-morphdom": "^0.0.26",
-    "silentium-web-api": "^0.0.39",
+    "silentium-web-api": "^0.0.40",
     "uuid": "^13.0.0"
   }
 }

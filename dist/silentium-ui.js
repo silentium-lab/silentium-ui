@@ -1,4 +1,4 @@
-import { Applied, Message, Of, All, Shared, Connected, Actual, FromEvent, Context, Primitive, DestroyContainer, Any, Void } from 'silentium';
+import { Applied, Message, All, Of, Shared, Connected, Actual, FromEvent, Context, Primitive, DestroyContainer, Any, Void } from 'silentium';
 import { Template, Task } from 'silentium-components';
 import { v4 } from 'uuid';
 import { Element } from 'silentium-web-api';
